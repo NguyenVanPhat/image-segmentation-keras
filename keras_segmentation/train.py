@@ -1,6 +1,6 @@
 import json
 import os
-
+from segmentation_models.metrics import iou_score
 from .data_utils.data_loader import image_segmentation_generator, \
     verify_segmentation_dataset
 import six
@@ -118,7 +118,7 @@ def train(model,
 
         model.compile(loss=loss_k,
                       optimizer=optimizer_name,
-                      metrics=['accuracy'])
+                      metrics=[iou_score])
 
     if checkpoints_path is not None:
         config_file = checkpoints_path + "_config.json"
