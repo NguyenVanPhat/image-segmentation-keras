@@ -144,7 +144,7 @@ def train(model,
     initial_epoch = 0
 
     if auto_resume_checkpoint and (checkpoints_path is not None):
-        latest_checkpoint = find_latest_checkpoint(checkpoints_path)
+            latest_checkpoint = find_latest_checkpoint(checkpoints_path)
         if latest_checkpoint is not None:
             print("Loading the weights from latest checkpoint ",
                   latest_checkpoint)
