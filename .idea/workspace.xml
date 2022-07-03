@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e8ec2a1a-9117-4203-842e-917700774ad0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keras_segmentation/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/keras_segmentation/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keras_segmentation/models/load_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/keras_segmentation/models/load_model.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
