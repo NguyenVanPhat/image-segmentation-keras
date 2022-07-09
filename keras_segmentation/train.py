@@ -148,6 +148,7 @@ def train(model,
         if latest_checkpoint is not None:
             print("Loading the weights from latest checkpoint ",
                   latest_checkpoint)
+            print("latest_checkpoint: ", latest_checkpoint)
             model.load_weights(latest_checkpoint)
 
             initial_epoch = int(latest_checkpoint.split('.')[-1])
