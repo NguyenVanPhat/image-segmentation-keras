@@ -42,5 +42,4 @@ def find_latest_checkpoint(checkpoints_path, fail_safe=True):
     return latest_epoch_checkpoint
 
 def loadWeight_Phat(model, checkpoints_path):
-    print("Test lan 1: ", find_latest_checkpoint(checkpoints_path))
     model.load_weights(find_latest_checkpoint(checkpoints_path))
