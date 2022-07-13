@@ -30,7 +30,7 @@ def get_vgg_encoder(input_height=224,  input_width=224, pretrained='imagenet', c
                name='block1_conv2', data_format=IMAGE_ORDERING)(x)
     x = MaxPooling2D((2, 2), strides=(2, 2), name='block1_pool',
                      data_format=IMAGE_ORDERING)(x)
-    # x = Dropout(0.25)(x)
+    x = Dropout(0.25)(x)
     f1 = x
     # Block 2
     x = Conv2D(128, (3, 3), activation='relu', padding='same',
@@ -39,7 +39,7 @@ def get_vgg_encoder(input_height=224,  input_width=224, pretrained='imagenet', c
                name='block2_conv2', data_format=IMAGE_ORDERING)(x)
     x = MaxPooling2D((2, 2), strides=(2, 2), name='block2_pool',
                      data_format=IMAGE_ORDERING)(x)
-    # x = Dropout(0.5)(x)
+    x = Dropout(0.5)(x)
     f2 = x
 
     # Block 3
@@ -51,7 +51,7 @@ def get_vgg_encoder(input_height=224,  input_width=224, pretrained='imagenet', c
                name='block3_conv3', data_format=IMAGE_ORDERING)(x)
     x = MaxPooling2D((2, 2), strides=(2, 2), name='block3_pool',
                      data_format=IMAGE_ORDERING)(x)
-    # x = Dropout(0.5)(x)
+    x = Dropout(0.5)(x)
     f3 = x
 
     # Block 4
@@ -63,7 +63,7 @@ def get_vgg_encoder(input_height=224,  input_width=224, pretrained='imagenet', c
                name='block4_conv3', data_format=IMAGE_ORDERING)(x)
     x = MaxPooling2D((2, 2), strides=(2, 2), name='block4_pool',
                      data_format=IMAGE_ORDERING)(x)
-    # x = Dropout(0.5)(x)
+    x = Dropout(0.5)(x)
     f4 = x
 
     # Block 5
@@ -75,7 +75,7 @@ def get_vgg_encoder(input_height=224,  input_width=224, pretrained='imagenet', c
                name='block5_conv3', data_format=IMAGE_ORDERING)(x)
     x = MaxPooling2D((2, 2), strides=(2, 2), name='block5_pool',
                      data_format=IMAGE_ORDERING)(x)
-    # x = Dropout(0.5)(x)
+    x = Dropout(0.5)(x)
     f5 = x
 
     if pretrained == 'imagenet':

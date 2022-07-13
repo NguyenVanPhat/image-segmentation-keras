@@ -81,14 +81,14 @@ def _unet(n_classes, encoder, l1_skip_conn=True, input_height=416,
 
     o = (UpSampling2D((2, 2), data_format=IMAGE_ORDERING))(o)
     o = (concatenate([o, f3], axis=MERGE_AXIS))
-    # o = Dropout(0.5)(o)
+    o = Dropout(0.5)(o)
     o = (ZeroPadding2D((1, 1), data_format=IMAGE_ORDERING))(o)
     o = (Conv2D(256, (3, 3), padding='valid', activation='relu' , data_format=IMAGE_ORDERING))(o)
     o = (BatchNormalization())(o)
 
     o = (UpSampling2D((2, 2), data_format=IMAGE_ORDERING))(o)
     o = (concatenate([o, f2], axis=MERGE_AXIS))
-    # o = Dropout(0.5)(o)
+    o = Dropout(0.5)(o)
     o = (ZeroPadding2D((1, 1), data_format=IMAGE_ORDERING))(o)
     o = (Conv2D(128, (3, 3), padding='valid' , activation='relu' , data_format=IMAGE_ORDERING))(o)
     o = (BatchNormalization())(o)
@@ -97,7 +97,7 @@ def _unet(n_classes, encoder, l1_skip_conn=True, input_height=416,
 
     if l1_skip_conn:
         o = (concatenate([o, f1], axis=MERGE_AXIS))
-        # o = Dropout(0.5)(o)
+        o = Dropout(0.5)(o)
 
     o = (ZeroPadding2D((1, 1), data_format=IMAGE_ORDERING))(o)
     o = (Conv2D(64, (3, 3), padding='valid', activation='relu', data_format=IMAGE_ORDERING, name="seg_feats"))(o)
